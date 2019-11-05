@@ -31,14 +31,14 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: "spring.datasource.url"
-              value: ".Values.databaseUrl"
+              value: {{ .Values.databaseUrl }}
             - name: "io.zeebe.monitor.connectionString"
-              value: ".Values.zeebeHost"
+              value: {{ .Values.zeebeHost }}
             - name: "io.zeebe.monitor.hazelcast.connection"
-              value: ".Values.zeebeHazelcast"
+              value: {{ .Values.zeebeHazelcast }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
             httpGet:
