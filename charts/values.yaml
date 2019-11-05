@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  repository: camunda/zeebe-simple-monitor:0.15.0
+  tag: latest
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
