@@ -1,3 +1,17 @@
+# Auto-generated files
+.DS_Store
+.idea
+target
+.classpath
+.checkstyle
+.project
+.checkstyle
+.settings
+.factorypath
+build.properties
+bin
+.metadata
+
 # Compiled class file
 *.class
 
