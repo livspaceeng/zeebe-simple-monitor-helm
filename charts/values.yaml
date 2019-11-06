@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: camunda/zeebe-simple-monitor:0.15.0
+  repository: camunda/zeebe-simple-monitor
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -19,7 +19,7 @@ databaseUrl: "jdbc:postgresql://postgres-dev:5432/zeebe-monitor"
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name:
