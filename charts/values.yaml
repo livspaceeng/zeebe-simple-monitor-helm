@@ -15,7 +15,7 @@ fullnameOverride: ""
 
 zeebeHost: "zeebe:26500"
 zeebeHazelcast: "zeebe:5701"
-databaseUrl: "jdbc:postgresql://postgres-dev.cluster-ciq7fhve3lvr.ap-southeast-1.rds.amazonaws.com:5432/zeebe-monitor"
+databaseUrl: "jdbc:postgresql://postgres-dev:5432/zeebe-monitor"
 
 serviceAccount:
   # Specifies whether a service account should be created
