@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: camunda/zeebe-simple-monitor
+  repository: livspaceeng/zeebe-simple-monitor
   tag: latest
   pullPolicy: IfNotPresent
 
