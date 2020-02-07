@@ -13,11 +13,11 @@ Helm chart to host Zeebe Simple Monitor app on Kubernetes cluster
   + [zeebe-simple-monitor helm repo](https://github.com/livspaceeng/zeebe-simple-monitor-helm)
   + [helm-chart repo](https://github.com/livspaceeng/helm-charts)
 - Make any required changes to [zeebe-simple-monitor-helm](https://github.com/livspaceeng/zeebe-simple-monitor-helm) repo.
-- Update the **appVersion** in [Chart.yaml](./Chart.yaml) to point to the current [zeebe-simple-monitor version](https://github.com/livspaceeng/zeebe-simple-monitor/blob/master/pom.xml) (*Just to be aware of the current version being used*).
-- Upgrade the **version** in [Chart.yaml](./Chart.yaml).
+- Update the **appVersion** in [Chart.yaml](./zeebe-simple-monitor/Chart.yaml) to point to the current [zeebe-simple-monitor version](https://github.com/livspaceeng/zeebe-simple-monitor/blob/master/pom.xml) (*Just to be aware of the current version being used*).
+- Upgrade the **version** in [Chart.yaml](./zeebe-simple-monitor/Chart.yaml).
 - Run the below commands from terminal (*inside ~/helm-charts directory*):
   + `> helm package ../zeebe-simple-monitor-helm/zeebe-simple-monitor`
   + `> helm repo index --merge index.yaml --url https://charts.livspace.com .`
-- Use the **version** from [Chart.yaml](./Chart.yaml) and update it in [requirements.yaml](https://bitbucket.org/livspaceeng/environment-jx-dev/src/master/env/requirements.yaml).
+- Use the **version** from [Chart.yaml](./zeebe-simple-monitor/Chart.yaml) and update it in [requirements.yaml](https://bitbucket.org/livspaceeng/environment-jx-dev/src/master/env/requirements.yaml).
 
 That's it! ;)
