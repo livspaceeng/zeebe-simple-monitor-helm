@@ -31,23 +31,28 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: "spring.datasource.url"
-              value: {{ .Values.databaseUrl }}
-            - name: "io.zeebe.monitor.connectionString"
-              value: {{ .Values.zeebeHost }}
-            - name: "io.zeebe.monitor.hazelcast.connection"
-              value: {{ .Values.zeebeHazelcast }}
+              value: {{ .Values.database.url }}
+            - name: "spring.datasource.driverClassName"
+              value: {{ .Values.database.driverClassName }}
+            - name: "spring.jpa.database-platform"
+              value: {{ .Values.database.platform }}
+            - name: "zeebe.worker.hazelcast.connection"
+              value: {{ .Values.zeebe.hazelcastHost }}
+{{- if .Values.env.enabled }}
+{{ toYaml .Values.env.values | indent 12 -}}
+{{- end }}
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: {{ .Values.service.internalPort }}
               protocol: TCP
-#          livenessProbe:
-#            httpGet:
-#              path: /
-#              port: http
-#          readinessProbe:
-#            httpGet:
-#              path: /
-#              port: http
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.service.probePath }}
+              port: http
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.service.probePath }}
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

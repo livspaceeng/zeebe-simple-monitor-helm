@@ -13,9 +13,21 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-zeebeHost: "zeebe:26500"
-zeebeHazelcast: "zeebe:5701"
-databaseUrl: "jdbc:postgresql://postgres-dev:5432/zeebe-monitor"
+zeebe:
+  hazelcastHost: "zeebe:5701"
+database:
+  url: "jdbc:postgresql://postgres-dev:5432/zeebe-monitor"
+  driverClassName: "org.postgresql.Driver"
+  platform: "org.hibernate.dialect.PostgreSQLDialect"
+
+service:
+  type: ClusterIP
+  port: 80
+  internalPort: 8082
+  probePath: "/actuator/health"
+
+env:
+  enabled: false
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -34,10 +46,6 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-
-service:
-  type: ClusterIP
-  port: 80
 
 ingress:
   enabled: false
