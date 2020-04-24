@@ -1,10 +1,11 @@
 # [zeebe-simple-monitor-helm](https://github.com/livspaceeng/zeebe-simple-monitor-helm)
 
 Helm chart to host Zeebe Simple Monitor app on Kubernetes cluster
-> **Latest release: 0.2.0**
+> **Latest App version: 0.19.0**
+> **Latest Chart version: 0.4.0**
 
 ### Deployment Steps
-- Clone [zeebe-simple-monitor-fork](https://github.com/livspaceeng/zeebe-simple-monitor) repo. Make the changes, build the jar using `mvn clean install -DskipTests` and push the required changes, **along with the new target jar** (_Docker build uses this jar_), to master branch.
+- Clone [zeebe-simple-monitor-fork](https://github.com/livspaceeng/zeebe-simple-monitor) repo. Make the changes, ~~build the jar using `mvn clean install -DskipTests`~~ and push the required changes, ~~**along with the new target jar** (_Docker build uses this jar_),~~ to master branch. [Dockerfile](https://github.com/livspaceeng/zeebe-simple-monitor/blob/master/Dockerfile) will trigger a multi-stage build, to build the code and generate Docker image.
 - It will trigger an automated build on [Docker hub](https://hub.docker.com/repository/docker/livspaceeng/zeebe-simple-monitor). ~~Not yet integrated with Docker hub. Run the below manual commands from terminal (*inside the cloned directory*):~~
   + ~~`> docker build -t zeebe-simple-monitor:latest .`~~
   + ~~`> docker tag zeebe-simple-monitor:latest livspaceeng/zeebe-simple-monitor:latest`~~
