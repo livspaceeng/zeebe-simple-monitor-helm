@@ -1,8 +1,6 @@
 # [zeebe-simple-monitor-helm](https://github.com/livspaceeng/zeebe-simple-monitor-helm)
 
 Helm chart to host Zeebe Simple Monitor app on Kubernetes cluster
-> **Latest App version: 0.19.0**
-
 > **Latest Chart version: 0.4.0**
 
 ### Deployment Steps
