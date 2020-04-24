@@ -24,7 +24,15 @@ service:
   type: ClusterIP
   port: 80
   internalPort: 8082
-  probePath: "/actuator/health"
+
+livenessProbe:
+  initialDelaySeconds: 150
+  periodSeconds: 30
+  path: "/actuator/health"
+readinessProbe:
+  initialDelaySeconds: 60
+  periodSeconds: 15
+  path: "/actuator/health"
 
 env:
   enabled: false

@@ -47,12 +47,16 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: {{ .Values.service.probePath }}
+              path: {{ .Values.livenessProbe.path }}
               port: http
+            initialDelaySeconds: {{ default 150 .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ default 30 .Values.livenessProbe.periodSeconds }}
           readinessProbe:
             httpGet:
-              path: {{ .Values.service.probePath }}
+              path: {{ .Values.readinessProbe.path }}
               port: http
+            initialDelaySeconds: {{ default 60 .Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ default 15 .Values.readinessProbe.periodSeconds }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
