@@ -13,8 +13,6 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-zeebe:
-  hazelcastHost: "zeebe:5701"
 database:
   url: "jdbc:postgresql://postgres-dev:5432/zeebe-monitor"
   driverClassName: "org.postgresql.Driver"

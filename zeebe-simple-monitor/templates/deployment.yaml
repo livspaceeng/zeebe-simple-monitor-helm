@@ -36,8 +36,6 @@ spec:
               value: {{ .Values.database.driverClassName }}
             - name: "spring.jpa.database-platform"
               value: {{ .Values.database.platform }}
-            - name: "zeebe.worker.hazelcast.connection"
-              value: {{ .Values.zeebe.hazelcastHost }}
 {{- if .Values.env.enabled }}
 {{ toYaml .Values.env.values | indent 12 -}}
 {{- end }}
