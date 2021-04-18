@@ -13,10 +13,10 @@ Helm chart to host Zeebe Simple Monitor app on Kubernetes cluster
 - Update the **appVersion** in [Chart.yaml](./zeebe-simple-monitor/Chart.yaml) to point to the current [zeebe-simple-monitor version](https://github.com/livspaceeng/zeebe-simple-monitor/blob/master/pom.xml) (*Just to be aware of the current version being used*).
 - Upgrade the **version** in [Chart.yaml](./zeebe-simple-monitor/Chart.yaml), and push to this repo.
 - Run the below commands from terminal (*inside ~/helm-charts directory*):
-  + `> helm package ../zeebe-simple-monitor-helm/zeebe-simple-monitor`
-  + `> helm repo index --merge index.yaml --url https://charts.livspace.com .`
-  + `> git commit`
-  + `> git push origin`
+  + `$ helm package ../zeebe-simple-monitor-helm/zeebe-simple-monitor`
+  + `$ helm repo index --merge index.yaml --url https://charts.livspace.com .`
+  + `$ git commit`
+  + `$ git push origin`
 - Use the **version** from [Chart.yaml](./zeebe-simple-monitor/Chart.yaml) and update it in requirements.yaml.
 
 That's it! :)
